@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "support-tickets": {
+      "command": "python",
+      "args": ["-m", "mcp_server.server"],
+      "cwd": "."
+    }
+  }
+}
