@@ -11,7 +11,7 @@ UI.
 ### Option A: Docker (recommended)
 
 ```bash
-git clone <repo-url>
+git clone (https://github.com/snehitsharma/support-ticket-ai-system)
 cd support-ticket-ai-system
 
 cp .env.example .env          # then edit .env and set GROQ_API_KEY
