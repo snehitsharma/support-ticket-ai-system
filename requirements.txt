@@ -11,3 +11,4 @@ streamlit==1.64.0
 requests==2.34.2
 python-dotenv==1.2.3
 mcp==1.30.0
+langsmith==0.8.9
