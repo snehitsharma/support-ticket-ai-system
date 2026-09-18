@@ -22,8 +22,8 @@ cp .env.example .env          # then edit .env and set GROQ_API_KEY
 docker compose up -d --build
 ```
 
-- API: `http://localhost:8000` (Swagger docs at `http://localhost:8000/docs`)
-- UI: `http://localhost:8501`
+- API: `http://localhost:1234` (Swagger docs at `http://localhost:1234/docs`)
+- UI: `http://localhost:1456`
 
 `docker compose down` to stop. `tickets.db` is rebuilt fresh from the CSV on
 every container start, so no volume/persistence step is needed.
@@ -39,17 +39,17 @@ pip install -r requirements.txt
 
 cp .env.example .env          # then edit .env and set GROQ_API_KEY
 
-uvicorn main:app --reload
+uvicorn main:app --reload --port 1234
 ```
 
 The app ingests `data/support_tickets.csv` into `tickets.db` automatically
 on startup (`main.py`'s `lifespan`), no manual ingestion step. API docs at
-`http://127.0.0.1:8000/docs`.
+`http://127.0.0.1:1234/docs`.
 
 To run the UI (separate terminal, API must already be running):
 
 ```bash
-streamlit run ui.py
+streamlit run ui.py --server.port 1456
 ```
 
 ## Architecture

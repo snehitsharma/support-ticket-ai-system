@@ -20,8 +20,7 @@ def check_guardrail(question: str) -> None:
     if any(word in lowered for word in BLOCKED_KEYWORDS):
         raise ValueError("Only read-only questions are allowed.")
     if not any(word in lowered for word in TABLE_KEYWORDS):
-        raise ValueError("It looks like you strayed too far, Question must be about the support ticket data." \
-        "I'd be happy to help about anything related to support tickets, such as ticket counts, average resolution times, agent performance, and customer ratings.")
+        raise ValueError("invalid query")
 
 
 AGENT_BEHAVIOR_PROMPT = """You are a support-ticket data analyst. You answer
